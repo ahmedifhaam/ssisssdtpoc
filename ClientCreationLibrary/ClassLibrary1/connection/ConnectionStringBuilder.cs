@@ -13,25 +13,25 @@ namespace ClientCreation.connection
         {
             builder = new SqlConnectionStringBuilder(TEMPLATE);
         }
-        public ConnectionStringBuilder setServer(string server)
+        public IConnectionStringBuilder SetServer(string server)
         {
             builder.DataSource = server;
             return this;
         }
 
-        public ConnectionStringBuilder setDatabase(string db)
+        public IConnectionStringBuilder SetDatabase(string db)
         {
             builder.InitialCatalog = db;
             return this;
         }
 
-        public ConnectionStringBuilder setPassword(string pass)
+        public IConnectionStringBuilder SetPassword(string pass)
         {
             builder.Password = pass;
             return this;
         }
 
-        public ConnectionStringBuilder setUserName(string name)
+        public IConnectionStringBuilder SetUserName(string name)
         {
             builder.UserID = name;
             return this;

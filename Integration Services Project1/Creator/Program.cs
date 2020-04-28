@@ -1,5 +1,5 @@
-﻿using ClientCreation.ssdt;
-using ClientCreation.ssis;
+﻿using ClientCreation.connection;
+using ClientCreation.ssdt;
 using CommandLine;
 using System;
 using System.Collections.Generic;
@@ -49,31 +49,21 @@ namespace Creator
             Console.WriteLine(String.Format("Dacpac path {0}", options.DacpacPath));
             Console.WriteLine(options.ToString());
 
-            ConnectionStringBuilder builder = new ConnectionStringBuilder();
-            builder.setServer(options.Server)
-                .setDatabase(options.Databasename)
-                .setUserName(options.Username)
-                .setPassword(options.Password);
+            IConnectionStringBuilder builder = new ConnectionStringBuilder();
+            builder.SetServer(options.Server)
+                .SetDatabase(options.Databasename)
+                .SetUserName(options.Username)
+                .SetPassword(options.Password);
 
 
             //Create the database from ssdt project
-            PackageLoader pacLoader = new PackageLoader();
+            SSDTPackageLoader pacLoader = new SSDTPackageLoader();
 
-            SSDTExecutor exec = new SSDTExecutor(builder.build());
+            SSDTExecutor exec = new SSDTExecutor(builder);
             exec.OnStatusUpdate(progressupdate);
-            pacLoader.loadDacPac(options.DacpacPath);
-            exec.publish(pacLoader, options.Databasename);
+            pacLoader.LoadSSDTPackage(options.DacpacPath);
+            exec.Publish(pacLoader, options.Databasename);
 
-            //migrate AE encrypted data
-            pacLoader.loadSSISPackage(options.SSISPath);
-            var ssisrunner = new SSISExecutor(pacLoader);
-            ssisrunner.SetServer(options.Server);
-            ssisrunner.SetUser(options.Username);
-            ssisrunner.SetPassword(options.Password);
-            ssisrunner.SetDatabase(options.Databasename);
-            string result = ssisrunner.execute();
-            Console.WriteLine(result);
-            Console.ReadLine();
         }
 
         private static void progressupdate(object sender, string e)
@@ -83,10 +73,6 @@ namespace Creator
 
         static void HandleParseError(IEnumerable<Error> errs)
         {
-            //foreach(var error in errs)
-            //{
-            //    Console.WriteLine(error);
-            //}
         }
     }
 }

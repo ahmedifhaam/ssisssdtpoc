@@ -1,22 +1,25 @@
-﻿using Microsoft.SqlServer.Dts.Runtime;
+﻿using Microsoft.SqlServer.Dac;
+using Microsoft.SqlServer.Dts.Runtime;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace ClientCreation.ssdt
 {
-    public class SSDTPackageLoader : ISSISPackageLoader
+    public class SSDTPackageLoader : ISSDTPackageLoader
     {
-        Package SSISPack;
-        public void LoadSSISPackage(string path)
+        DacPackage pack;
+
+        public void LoadSSDTPackage(string path)
         {
-            this.SSISPack = new Application().LoadPackage(path, null);
+            pack = DacPackage.Load(path);
         }
 
-
-        public Package GetLoadedSSISPack()
+        public DacPackage GetLoadedSSDTPack()
         {
-            return this.SSISPack;
+            if (pack == null) throw new FileNotFoundException("SSDT Package not found");
+            return pack;
         }
     }
 }
