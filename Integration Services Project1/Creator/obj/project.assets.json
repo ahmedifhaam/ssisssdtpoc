@@ -1,0 +1,1374 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7.2": {
+      "CommandLineParser/2.7.82": {
+        "type": "package",
+        "compile": {
+          "lib/net461/CommandLine.dll": {}
+        },
+        "runtime": {
+          "lib/net461/CommandLine.dll": {}
+        }
+      },
+      "Microsoft.SqlServer.Dac/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/Microsoft.SqlServer.Dac.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/Microsoft.SqlServer.Dac.dll": {}
+        }
+      },
+      "Microsoft.SqlServer.Dac-x64/12.0.2875.2": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/Microsoft.SqlServer.Dac.Extensions.dll": {},
+          "lib/Microsoft.SqlServer.Dac.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/Microsoft.SqlServer.Dac.Extensions.dll": {},
+          "lib/Microsoft.SqlServer.Dac.dll": {}
+        }
+      },
+      "Microsoft.SqlServer.DacFx.x64/150.4573.2": {
+        "type": "package",
+        "compile": {
+          "lib/net46/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/net46/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/net46/Microsoft.SqlServer.Dac.Extensions.dll": {},
+          "lib/net46/Microsoft.SqlServer.Dac.dll": {},
+          "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll": {},
+          "lib/net46/Microsoft.SqlServer.Types.dll": {}
+        },
+        "runtime": {
+          "lib/net46/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/net46/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/net46/Microsoft.SqlServer.Dac.Extensions.dll": {},
+          "lib/net46/Microsoft.SqlServer.Dac.dll": {},
+          "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll": {},
+          "lib/net46/Microsoft.SqlServer.Types.dll": {}
+        },
+        "resource": {
+          "lib/net46/de-DE/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/de-DE/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/de-DE/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/de-DE/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/de-DE/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/es-ES/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/es-ES/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/es-ES/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/es-ES/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/es-ES/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/fr-FR/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/fr-FR/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/fr-FR/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/fr-FR/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/fr-FR/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/it-IT/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/it-IT/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/it-IT/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/it-IT/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/it-IT/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/ja-JP/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ja-JP/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ja-JP/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ja-JP/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ja-JP/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ko-KR/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/ko-KR/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/ko-KR/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/ko-KR/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/ko-KR/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/pt-BR/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/pt-BR/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/pt-BR/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/pt-BR/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/pt-BR/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/ru-RU/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/ru-RU/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/ru-RU/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/ru-RU/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/ru-RU/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/zh-CN/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-CN/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-CN/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-CN/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-CN/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-TW/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net46/zh-TW/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net46/zh-TW/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net46/zh-TW/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net46/zh-TW/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "zh-TW"
+          }
+        }
+      },
+      "Microsoft.SqlServer.TransactSql.ScriptDom/150.4573.2": {
+        "type": "package",
+        "compile": {
+          "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll": {}
+        },
+        "runtime": {
+          "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll": {}
+        }
+      },
+      "MicrosoftSqlServerManagedDTS/4.0.12": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.SqlServer.ManagedDTS.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.SqlServer.ManagedDTS.dll": {}
+        }
+      },
+      "System.Data.SqlClient/4.8.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Data",
+          "System.Xml",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Data.SqlClient.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Data.SqlClient.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard2.0/System.Data.SqlClient.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/net461/System.Data.SqlClient.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "ClientCreation/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Microsoft.SqlServer.Dac": "1.0.1",
+          "Microsoft.SqlServer.Dac-x64": "12.0.2875.2",
+          "Microsoft.SqlServer.DacFx.x64": "150.4573.2",
+          "Microsoft.SqlServer.TransactSql.ScriptDom": "150.4573.2",
+          "MicrosoftSqlServerManagedDTS": "4.0.12",
+          "System.Data.SqlClient": "4.8.1"
+        },
+        "compile": {
+          "bin/placeholder/ClientCreation.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ClientCreation.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win": {
+      "CommandLineParser/2.7.82": {
+        "type": "package",
+        "compile": {
+          "lib/net461/CommandLine.dll": {}
+        },
+        "runtime": {
+          "lib/net461/CommandLine.dll": {}
+        }
+      },
+      "Microsoft.SqlServer.Dac/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/Microsoft.SqlServer.Dac.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/Microsoft.SqlServer.Dac.dll": {}
+        }
+      },
+      "Microsoft.SqlServer.Dac-x64/12.0.2875.2": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/Microsoft.SqlServer.Dac.Extensions.dll": {},
+          "lib/Microsoft.SqlServer.Dac.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/Microsoft.SqlServer.Dac.Extensions.dll": {},
+          "lib/Microsoft.SqlServer.Dac.dll": {}
+        }
+      },
+      "Microsoft.SqlServer.DacFx.x64/150.4573.2": {
+        "type": "package",
+        "compile": {
+          "lib/net46/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/net46/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/net46/Microsoft.SqlServer.Dac.Extensions.dll": {},
+          "lib/net46/Microsoft.SqlServer.Dac.dll": {},
+          "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll": {},
+          "lib/net46/Microsoft.SqlServer.Types.dll": {}
+        },
+        "runtime": {
+          "lib/net46/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/net46/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/net46/Microsoft.SqlServer.Dac.Extensions.dll": {},
+          "lib/net46/Microsoft.SqlServer.Dac.dll": {},
+          "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll": {},
+          "lib/net46/Microsoft.SqlServer.Types.dll": {}
+        },
+        "resource": {
+          "lib/net46/de-DE/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/de-DE/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/de-DE/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/de-DE/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/de-DE/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/es-ES/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/es-ES/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/es-ES/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/es-ES/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/es-ES/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/fr-FR/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/fr-FR/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/fr-FR/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/fr-FR/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/fr-FR/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/it-IT/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/it-IT/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/it-IT/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/it-IT/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/it-IT/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/ja-JP/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ja-JP/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ja-JP/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ja-JP/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ja-JP/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ko-KR/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/ko-KR/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/ko-KR/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/ko-KR/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/ko-KR/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/pt-BR/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/pt-BR/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/pt-BR/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/pt-BR/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/pt-BR/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/ru-RU/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/ru-RU/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/ru-RU/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/ru-RU/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/ru-RU/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/zh-CN/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-CN/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-CN/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-CN/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-CN/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-TW/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net46/zh-TW/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net46/zh-TW/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net46/zh-TW/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net46/zh-TW/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "zh-TW"
+          }
+        }
+      },
+      "Microsoft.SqlServer.TransactSql.ScriptDom/150.4573.2": {
+        "type": "package",
+        "compile": {
+          "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll": {}
+        },
+        "runtime": {
+          "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll": {}
+        }
+      },
+      "MicrosoftSqlServerManagedDTS/4.0.12": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.SqlServer.ManagedDTS.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.SqlServer.ManagedDTS.dll": {}
+        }
+      },
+      "System.Data.SqlClient/4.8.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Data",
+          "System.Xml",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Data.SqlClient.dll": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/net461/System.Data.SqlClient.dll": {}
+        }
+      },
+      "ClientCreation/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Microsoft.SqlServer.Dac": "1.0.1",
+          "Microsoft.SqlServer.Dac-x64": "12.0.2875.2",
+          "Microsoft.SqlServer.DacFx.x64": "150.4573.2",
+          "Microsoft.SqlServer.TransactSql.ScriptDom": "150.4573.2",
+          "MicrosoftSqlServerManagedDTS": "4.0.12",
+          "System.Data.SqlClient": "4.8.1"
+        },
+        "compile": {
+          "bin/placeholder/ClientCreation.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ClientCreation.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-x64": {
+      "CommandLineParser/2.7.82": {
+        "type": "package",
+        "compile": {
+          "lib/net461/CommandLine.dll": {}
+        },
+        "runtime": {
+          "lib/net461/CommandLine.dll": {}
+        }
+      },
+      "Microsoft.SqlServer.Dac/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/Microsoft.SqlServer.Dac.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/Microsoft.SqlServer.Dac.dll": {}
+        }
+      },
+      "Microsoft.SqlServer.Dac-x64/12.0.2875.2": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/Microsoft.SqlServer.Dac.Extensions.dll": {},
+          "lib/Microsoft.SqlServer.Dac.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/Microsoft.SqlServer.Dac.Extensions.dll": {},
+          "lib/Microsoft.SqlServer.Dac.dll": {}
+        }
+      },
+      "Microsoft.SqlServer.DacFx.x64/150.4573.2": {
+        "type": "package",
+        "compile": {
+          "lib/net46/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/net46/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/net46/Microsoft.SqlServer.Dac.Extensions.dll": {},
+          "lib/net46/Microsoft.SqlServer.Dac.dll": {},
+          "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll": {},
+          "lib/net46/Microsoft.SqlServer.Types.dll": {}
+        },
+        "runtime": {
+          "lib/net46/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/net46/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/net46/Microsoft.SqlServer.Dac.Extensions.dll": {},
+          "lib/net46/Microsoft.SqlServer.Dac.dll": {},
+          "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll": {},
+          "lib/net46/Microsoft.SqlServer.Types.dll": {}
+        },
+        "resource": {
+          "lib/net46/de-DE/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/de-DE/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/de-DE/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/de-DE/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/de-DE/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/es-ES/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/es-ES/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/es-ES/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/es-ES/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/es-ES/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/fr-FR/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/fr-FR/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/fr-FR/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/fr-FR/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/fr-FR/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/it-IT/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/it-IT/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/it-IT/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/it-IT/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/it-IT/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/ja-JP/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ja-JP/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ja-JP/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ja-JP/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ja-JP/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ko-KR/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/ko-KR/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/ko-KR/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/ko-KR/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/ko-KR/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/pt-BR/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/pt-BR/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/pt-BR/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/pt-BR/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/pt-BR/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/ru-RU/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/ru-RU/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/ru-RU/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/ru-RU/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/ru-RU/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/zh-CN/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-CN/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-CN/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-CN/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-CN/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-TW/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net46/zh-TW/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net46/zh-TW/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net46/zh-TW/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net46/zh-TW/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "zh-TW"
+          }
+        }
+      },
+      "Microsoft.SqlServer.TransactSql.ScriptDom/150.4573.2": {
+        "type": "package",
+        "compile": {
+          "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll": {}
+        },
+        "runtime": {
+          "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll": {}
+        }
+      },
+      "MicrosoftSqlServerManagedDTS/4.0.12": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.SqlServer.ManagedDTS.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.SqlServer.ManagedDTS.dll": {}
+        }
+      },
+      "System.Data.SqlClient/4.8.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Data",
+          "System.Xml",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Data.SqlClient.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Data.SqlClient.dll": {}
+        }
+      },
+      "ClientCreation/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Microsoft.SqlServer.Dac": "1.0.1",
+          "Microsoft.SqlServer.Dac-x64": "12.0.2875.2",
+          "Microsoft.SqlServer.DacFx.x64": "150.4573.2",
+          "Microsoft.SqlServer.TransactSql.ScriptDom": "150.4573.2",
+          "MicrosoftSqlServerManagedDTS": "4.0.12",
+          "System.Data.SqlClient": "4.8.1"
+        },
+        "compile": {
+          "bin/placeholder/ClientCreation.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ClientCreation.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-x86": {
+      "CommandLineParser/2.7.82": {
+        "type": "package",
+        "compile": {
+          "lib/net461/CommandLine.dll": {}
+        },
+        "runtime": {
+          "lib/net461/CommandLine.dll": {}
+        }
+      },
+      "Microsoft.SqlServer.Dac/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/Microsoft.SqlServer.Dac.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/Microsoft.SqlServer.Dac.dll": {}
+        }
+      },
+      "Microsoft.SqlServer.Dac-x64/12.0.2875.2": {
+        "type": "package",
+        "compile": {
+          "lib/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/Microsoft.SqlServer.Dac.Extensions.dll": {},
+          "lib/Microsoft.SqlServer.Dac.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/Microsoft.SqlServer.Dac.Extensions.dll": {},
+          "lib/Microsoft.SqlServer.Dac.dll": {}
+        }
+      },
+      "Microsoft.SqlServer.DacFx.x64/150.4573.2": {
+        "type": "package",
+        "compile": {
+          "lib/net46/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/net46/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/net46/Microsoft.SqlServer.Dac.Extensions.dll": {},
+          "lib/net46/Microsoft.SqlServer.Dac.dll": {},
+          "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll": {},
+          "lib/net46/Microsoft.SqlServer.Types.dll": {}
+        },
+        "runtime": {
+          "lib/net46/Microsoft.Data.Tools.Schema.Sql.dll": {},
+          "lib/net46/Microsoft.Data.Tools.Utilities.dll": {},
+          "lib/net46/Microsoft.SqlServer.Dac.Extensions.dll": {},
+          "lib/net46/Microsoft.SqlServer.Dac.dll": {},
+          "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll": {},
+          "lib/net46/Microsoft.SqlServer.Types.dll": {}
+        },
+        "resource": {
+          "lib/net46/de-DE/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/de-DE/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/de-DE/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/de-DE/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/de-DE/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "de-DE"
+          },
+          "lib/net46/es-ES/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/es-ES/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/es-ES/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/es-ES/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/es-ES/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "es-ES"
+          },
+          "lib/net46/fr-FR/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/fr-FR/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/fr-FR/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/fr-FR/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/fr-FR/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "fr-FR"
+          },
+          "lib/net46/it-IT/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/it-IT/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/it-IT/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/it-IT/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/it-IT/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "it-IT"
+          },
+          "lib/net46/ja-JP/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ja-JP/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ja-JP/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ja-JP/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ja-JP/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "ja-JP"
+          },
+          "lib/net46/ko-KR/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/ko-KR/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/ko-KR/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/ko-KR/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/ko-KR/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "ko-KR"
+          },
+          "lib/net46/pt-BR/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/pt-BR/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/pt-BR/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/pt-BR/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/pt-BR/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net46/ru-RU/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/ru-RU/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/ru-RU/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/ru-RU/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/ru-RU/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "ru-RU"
+          },
+          "lib/net46/zh-CN/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-CN/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-CN/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-CN/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-CN/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "zh-CN"
+          },
+          "lib/net46/zh-TW/Microsoft.Data.Tools.Schema.Sql.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net46/zh-TW/Microsoft.Data.Tools.Utilities.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net46/zh-TW/Microsoft.SqlServer.Dac.Extensions.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net46/zh-TW/Microsoft.SqlServer.Dac.resources.dll": {
+            "locale": "zh-TW"
+          },
+          "lib/net46/zh-TW/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll": {
+            "locale": "zh-TW"
+          }
+        }
+      },
+      "Microsoft.SqlServer.TransactSql.ScriptDom/150.4573.2": {
+        "type": "package",
+        "compile": {
+          "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll": {}
+        },
+        "runtime": {
+          "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll": {}
+        }
+      },
+      "MicrosoftSqlServerManagedDTS/4.0.12": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.SqlServer.ManagedDTS.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.SqlServer.ManagedDTS.dll": {}
+        }
+      },
+      "System.Data.SqlClient/4.8.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Data",
+          "System.Xml",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Data.SqlClient.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Data.SqlClient.dll": {}
+        }
+      },
+      "ClientCreation/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Microsoft.SqlServer.Dac": "1.0.1",
+          "Microsoft.SqlServer.Dac-x64": "12.0.2875.2",
+          "Microsoft.SqlServer.DacFx.x64": "150.4573.2",
+          "Microsoft.SqlServer.TransactSql.ScriptDom": "150.4573.2",
+          "MicrosoftSqlServerManagedDTS": "4.0.12",
+          "System.Data.SqlClient": "4.8.1"
+        },
+        "compile": {
+          "bin/placeholder/ClientCreation.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ClientCreation.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CommandLineParser/2.7.82": {
+      "sha512": "JnjxBu4++EDnYtDzHskiPrPJ9hAna8amu8qlQx8J+2oZnPddDnkR/0FFtQMDz0Cs0YF2lbyW3OmYfRmIrLNY0A==",
+      "type": "package",
+      "path": "commandlineparser/2.7.82",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CommandLine20.png",
+        "License.md",
+        "README.md",
+        "commandlineparser.2.7.82.nupkg.sha512",
+        "commandlineparser.nuspec",
+        "lib/net40/CommandLine.dll",
+        "lib/net40/CommandLine.xml",
+        "lib/net45/CommandLine.dll",
+        "lib/net45/CommandLine.xml",
+        "lib/net461/CommandLine.dll",
+        "lib/net461/CommandLine.xml",
+        "lib/netstandard2.0/CommandLine.dll",
+        "lib/netstandard2.0/CommandLine.xml"
+      ]
+    },
+    "Microsoft.SqlServer.Dac/1.0.1": {
+      "sha512": "hM8XjneT/swpddD0p53Lpu01P8DTIoFshXJg2be8R2pWt8Zb3QJaZXaDaceXLO/ZrCYXlb241YuTxnWXl9/B6Q==",
+      "type": "package",
+      "path": "microsoft.sqlserver.dac/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/Microsoft.Data.Tools.Schema.Sql.dll",
+        "lib/Microsoft.Data.Tools.Utilities.dll",
+        "lib/Microsoft.SqlServer.Dac.dll",
+        "microsoft.sqlserver.dac.1.0.1.nupkg.sha512",
+        "microsoft.sqlserver.dac.nuspec"
+      ]
+    },
+    "Microsoft.SqlServer.Dac-x64/12.0.2875.2": {
+      "sha512": "fdIj4wYH4gOcuLTzekYmci8RiTuFrVJM0jTq8IYzm47MMeeNOkeZSrAeQdXK1TksZHUrQ60R4QHtNlCxmIxDhQ==",
+      "type": "package",
+      "path": "microsoft.sqlserver.dac-x64/12.0.2875.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/License_DACFx.txt",
+        "lib/Microsoft.Data.Tools.Schema.Sql.dll",
+        "lib/Microsoft.Data.Tools.Utilities.dll",
+        "lib/Microsoft.SqlServer.Dac.Extensions.dll",
+        "lib/Microsoft.SqlServer.Dac.Extensions.xml",
+        "lib/Microsoft.SqlServer.Dac.dll",
+        "lib/Microsoft.SqlServer.Dac.xml",
+        "microsoft.sqlserver.dac-x64.12.0.2875.2.nupkg.sha512",
+        "microsoft.sqlserver.dac-x64.nuspec",
+        "tools/1033/DacUnpackResources.dll",
+        "tools/DacUnpack.exe",
+        "tools/Microsoft.Data.Tools.Schema.Sql.dll",
+        "tools/Microsoft.Data.Tools.Utilities.dll",
+        "tools/Microsoft.SqlServer.Dac.Extensions.dll",
+        "tools/Microsoft.SqlServer.Dac.dll",
+        "tools/SqlPackage.exe",
+        "tools/SqlPackage.exe.config"
+      ]
+    },
+    "Microsoft.SqlServer.DacFx.x64/150.4573.2": {
+      "sha512": "ImtqxEWcx/j9mA0YA5sgqQ3rbVbHoDNlMyNiFagGVgldK+2e1/88rkW6ErkyMpqFgOaTW9cyLytj/g/wqSpw2Q==",
+      "type": "package",
+      "path": "microsoft.sqlserver.dacfx.x64/150.4573.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/Microsoft.Data.Tools.Schema.Sql.dll",
+        "lib/net46/Microsoft.Data.Tools.Schema.Sql.pdb",
+        "lib/net46/Microsoft.Data.Tools.Utilities.dll",
+        "lib/net46/Microsoft.Data.Tools.Utilities.pdb",
+        "lib/net46/Microsoft.SqlServer.Dac.Extensions.dll",
+        "lib/net46/Microsoft.SqlServer.Dac.Extensions.pdb",
+        "lib/net46/Microsoft.SqlServer.Dac.Extensions.xml",
+        "lib/net46/Microsoft.SqlServer.Dac.dll",
+        "lib/net46/Microsoft.SqlServer.Dac.pdb",
+        "lib/net46/Microsoft.SqlServer.Dac.xml",
+        "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll",
+        "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.pdb",
+        "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.xml",
+        "lib/net46/Microsoft.SqlServer.Types.dll",
+        "lib/net46/Microsoft.SqlServer.Types.pdb",
+        "lib/net46/de-DE/Microsoft.Data.Tools.Schema.Sql.resources.dll",
+        "lib/net46/de-DE/Microsoft.Data.Tools.Utilities.resources.dll",
+        "lib/net46/de-DE/Microsoft.SqlServer.Dac.Extensions.resources.dll",
+        "lib/net46/de-DE/Microsoft.SqlServer.Dac.resources.dll",
+        "lib/net46/de-DE/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll",
+        "lib/net46/es-ES/Microsoft.Data.Tools.Schema.Sql.resources.dll",
+        "lib/net46/es-ES/Microsoft.Data.Tools.Utilities.resources.dll",
+        "lib/net46/es-ES/Microsoft.SqlServer.Dac.Extensions.resources.dll",
+        "lib/net46/es-ES/Microsoft.SqlServer.Dac.resources.dll",
+        "lib/net46/es-ES/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll",
+        "lib/net46/fr-FR/Microsoft.Data.Tools.Schema.Sql.resources.dll",
+        "lib/net46/fr-FR/Microsoft.Data.Tools.Utilities.resources.dll",
+        "lib/net46/fr-FR/Microsoft.SqlServer.Dac.Extensions.resources.dll",
+        "lib/net46/fr-FR/Microsoft.SqlServer.Dac.resources.dll",
+        "lib/net46/fr-FR/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll",
+        "lib/net46/it-IT/Microsoft.Data.Tools.Schema.Sql.resources.dll",
+        "lib/net46/it-IT/Microsoft.Data.Tools.Utilities.resources.dll",
+        "lib/net46/it-IT/Microsoft.SqlServer.Dac.Extensions.resources.dll",
+        "lib/net46/it-IT/Microsoft.SqlServer.Dac.resources.dll",
+        "lib/net46/it-IT/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll",
+        "lib/net46/ja-JP/Microsoft.Data.Tools.Schema.Sql.resources.dll",
+        "lib/net46/ja-JP/Microsoft.Data.Tools.Utilities.resources.dll",
+        "lib/net46/ja-JP/Microsoft.SqlServer.Dac.Extensions.resources.dll",
+        "lib/net46/ja-JP/Microsoft.SqlServer.Dac.resources.dll",
+        "lib/net46/ja-JP/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll",
+        "lib/net46/ko-KR/Microsoft.Data.Tools.Schema.Sql.resources.dll",
+        "lib/net46/ko-KR/Microsoft.Data.Tools.Utilities.resources.dll",
+        "lib/net46/ko-KR/Microsoft.SqlServer.Dac.Extensions.resources.dll",
+        "lib/net46/ko-KR/Microsoft.SqlServer.Dac.resources.dll",
+        "lib/net46/ko-KR/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll",
+        "lib/net46/pt-BR/Microsoft.Data.Tools.Schema.Sql.resources.dll",
+        "lib/net46/pt-BR/Microsoft.Data.Tools.Utilities.resources.dll",
+        "lib/net46/pt-BR/Microsoft.SqlServer.Dac.Extensions.resources.dll",
+        "lib/net46/pt-BR/Microsoft.SqlServer.Dac.resources.dll",
+        "lib/net46/pt-BR/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll",
+        "lib/net46/ru-RU/Microsoft.Data.Tools.Schema.Sql.resources.dll",
+        "lib/net46/ru-RU/Microsoft.Data.Tools.Utilities.resources.dll",
+        "lib/net46/ru-RU/Microsoft.SqlServer.Dac.Extensions.resources.dll",
+        "lib/net46/ru-RU/Microsoft.SqlServer.Dac.resources.dll",
+        "lib/net46/ru-RU/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll",
+        "lib/net46/zh-CN/Microsoft.Data.Tools.Schema.Sql.resources.dll",
+        "lib/net46/zh-CN/Microsoft.Data.Tools.Utilities.resources.dll",
+        "lib/net46/zh-CN/Microsoft.SqlServer.Dac.Extensions.resources.dll",
+        "lib/net46/zh-CN/Microsoft.SqlServer.Dac.resources.dll",
+        "lib/net46/zh-CN/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll",
+        "lib/net46/zh-TW/Microsoft.Data.Tools.Schema.Sql.resources.dll",
+        "lib/net46/zh-TW/Microsoft.Data.Tools.Utilities.resources.dll",
+        "lib/net46/zh-TW/Microsoft.SqlServer.Dac.Extensions.resources.dll",
+        "lib/net46/zh-TW/Microsoft.SqlServer.Dac.resources.dll",
+        "lib/net46/zh-TW/Microsoft.SqlServer.TransactSql.ScriptDom.resources.dll",
+        "microsoft.sqlserver.dacfx.x64.150.4573.2.nupkg.sha512",
+        "microsoft.sqlserver.dacfx.x64.nuspec"
+      ]
+    },
+    "Microsoft.SqlServer.TransactSql.ScriptDom/150.4573.2": {
+      "sha512": "6ltGnGG/7iLWXt8+PRceylEuSS4SIND9jge07++iY35RS6LAzVy+d+Gh4JdKg0+dZlTNiqgqJiXEkOBzZkEO3A==",
+      "type": "package",
+      "path": "microsoft.sqlserver.transactsql.scriptdom/150.4573.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/Microsoft.SqlServer.TransactSql.ScriptDom.dll",
+        "lib/netstandard2.0/Microsoft.SqlServer.TransactSql.ScriptDom.dll",
+        "microsoft.sqlserver.transactsql.scriptdom.150.4573.2.nupkg.sha512",
+        "microsoft.sqlserver.transactsql.scriptdom.nuspec"
+      ]
+    },
+    "MicrosoftSqlServerManagedDTS/4.0.12": {
+      "sha512": "i5kCN5PlD+6NCryIIJKCZ2wBdquepLWYneT+I8oZZHGO8+TH+Aq33uiDO3QcyjB3Yo38gc46zstZ8oiGaOWPKg==",
+      "type": "package",
+      "path": "microsoftsqlservermanageddts/4.0.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.SqlServer.ManagedDTS.dll",
+        "microsoftsqlservermanageddts.4.0.12.nupkg.sha512",
+        "microsoftsqlservermanageddts.nuspec"
+      ]
+    },
+    "System.Data.SqlClient/4.8.1": {
+      "sha512": "HKLykcv6eZLbLnSMnlQ6Os4+UAmFE+AgYm92CTvJYeTOBtOYusX3qu8OoGhFrnKZax91UcLcDo5vPrqvJUTSNQ==",
+      "type": "package",
+      "path": "system.data.sqlclient/4.8.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net451/System.Data.SqlClient.dll",
+        "lib/net46/System.Data.SqlClient.dll",
+        "lib/net461/System.Data.SqlClient.dll",
+        "lib/net461/System.Data.SqlClient.xml",
+        "lib/netcoreapp2.1/System.Data.SqlClient.dll",
+        "lib/netcoreapp2.1/System.Data.SqlClient.xml",
+        "lib/netstandard1.2/System.Data.SqlClient.dll",
+        "lib/netstandard1.2/System.Data.SqlClient.xml",
+        "lib/netstandard1.3/System.Data.SqlClient.dll",
+        "lib/netstandard1.3/System.Data.SqlClient.xml",
+        "lib/netstandard2.0/System.Data.SqlClient.dll",
+        "lib/netstandard2.0/System.Data.SqlClient.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net451/System.Data.SqlClient.dll",
+        "ref/net46/System.Data.SqlClient.dll",
+        "ref/net461/System.Data.SqlClient.dll",
+        "ref/net461/System.Data.SqlClient.xml",
+        "ref/netcoreapp2.1/System.Data.SqlClient.dll",
+        "ref/netcoreapp2.1/System.Data.SqlClient.xml",
+        "ref/netstandard1.2/System.Data.SqlClient.dll",
+        "ref/netstandard1.2/System.Data.SqlClient.xml",
+        "ref/netstandard1.2/de/System.Data.SqlClient.xml",
+        "ref/netstandard1.2/es/System.Data.SqlClient.xml",
+        "ref/netstandard1.2/fr/System.Data.SqlClient.xml",
+        "ref/netstandard1.2/it/System.Data.SqlClient.xml",
+        "ref/netstandard1.2/ja/System.Data.SqlClient.xml",
+        "ref/netstandard1.2/ko/System.Data.SqlClient.xml",
+        "ref/netstandard1.2/ru/System.Data.SqlClient.xml",
+        "ref/netstandard1.2/zh-hans/System.Data.SqlClient.xml",
+        "ref/netstandard1.2/zh-hant/System.Data.SqlClient.xml",
+        "ref/netstandard1.3/System.Data.SqlClient.dll",
+        "ref/netstandard1.3/System.Data.SqlClient.xml",
+        "ref/netstandard1.3/de/System.Data.SqlClient.xml",
+        "ref/netstandard1.3/es/System.Data.SqlClient.xml",
+        "ref/netstandard1.3/fr/System.Data.SqlClient.xml",
+        "ref/netstandard1.3/it/System.Data.SqlClient.xml",
+        "ref/netstandard1.3/ja/System.Data.SqlClient.xml",
+        "ref/netstandard1.3/ko/System.Data.SqlClient.xml",
+        "ref/netstandard1.3/ru/System.Data.SqlClient.xml",
+        "ref/netstandard1.3/zh-hans/System.Data.SqlClient.xml",
+        "ref/netstandard1.3/zh-hant/System.Data.SqlClient.xml",
+        "ref/netstandard2.0/System.Data.SqlClient.dll",
+        "ref/netstandard2.0/System.Data.SqlClient.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll",
+        "runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.xml",
+        "runtimes/unix/lib/netstandard1.3/System.Data.SqlClient.dll",
+        "runtimes/unix/lib/netstandard2.0/System.Data.SqlClient.dll",
+        "runtimes/unix/lib/netstandard2.0/System.Data.SqlClient.xml",
+        "runtimes/win/lib/net451/System.Data.SqlClient.dll",
+        "runtimes/win/lib/net46/System.Data.SqlClient.dll",
+        "runtimes/win/lib/net461/System.Data.SqlClient.dll",
+        "runtimes/win/lib/net461/System.Data.SqlClient.xml",
+        "runtimes/win/lib/netcoreapp2.1/System.Data.SqlClient.dll",
+        "runtimes/win/lib/netcoreapp2.1/System.Data.SqlClient.xml",
+        "runtimes/win/lib/netstandard1.3/System.Data.SqlClient.dll",
+        "runtimes/win/lib/netstandard2.0/System.Data.SqlClient.dll",
+        "runtimes/win/lib/netstandard2.0/System.Data.SqlClient.xml",
+        "runtimes/win/lib/uap10.0.16299/System.Data.SqlClient.dll",
+        "runtimes/win/lib/uap10.0.16299/System.Data.SqlClient.xml",
+        "system.data.sqlclient.4.8.1.nupkg.sha512",
+        "system.data.sqlclient.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "ClientCreation/1.0.0": {
+      "type": "project",
+      "path": "../../ClientCreationLibrary/ClassLibrary1/ClientCreation.csproj",
+      "msbuildProject": "../../ClientCreationLibrary/ClassLibrary1/ClientCreation.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.2": [
+      "ClientCreation >= 1.0.0",
+      "CommandLineParser >= 2.7.82"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\ahmedi\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Work\\InitialDataMigration\\Integration Services Project1\\Creator\\Creator.csproj",
+      "projectName": "Creator",
+      "projectPath": "D:\\Work\\InitialDataMigration\\Integration Services Project1\\Creator\\Creator.csproj",
+      "packagesPath": "C:\\Users\\ahmedi\\.nuget\\packages\\",
+      "outputPath": "D:\\Work\\InitialDataMigration\\Integration Services Project1\\Creator\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\ahmedi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net472"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net472": {
+          "projectReferences": {
+            "D:\\Work\\InitialDataMigration\\ClientCreationLibrary\\ClassLibrary1\\ClientCreation.csproj": {
+              "projectPath": "D:\\Work\\InitialDataMigration\\ClientCreationLibrary\\ClassLibrary1\\ClientCreation.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net472": {
+        "dependencies": {
+          "CommandLineParser": {
+            "target": "Package",
+            "version": "[2.7.82, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

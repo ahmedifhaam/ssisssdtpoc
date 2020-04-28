@@ -1,0 +1,8 @@
+D:\Work\InitialDataMigration\ClientCreationLibrary\ClassLibrary1\bin\Debug\netstandard2.0\ClientCreation.deps.json
+D:\Work\InitialDataMigration\ClientCreationLibrary\ClassLibrary1\bin\Debug\netstandard2.0\ClientCreation.dll
+D:\Work\InitialDataMigration\ClientCreationLibrary\ClassLibrary1\bin\Debug\netstandard2.0\ClientCreation.pdb
+D:\Work\InitialDataMigration\ClientCreationLibrary\ClassLibrary1\obj\Debug\netstandard2.0\ClientCreation.AssemblyInfoInputs.cache
+D:\Work\InitialDataMigration\ClientCreationLibrary\ClassLibrary1\obj\Debug\netstandard2.0\ClientCreation.AssemblyInfo.cs
+D:\Work\InitialDataMigration\ClientCreationLibrary\ClassLibrary1\obj\Debug\netstandard2.0\ClientCreation.dll
+D:\Work\InitialDataMigration\ClientCreationLibrary\ClassLibrary1\obj\Debug\netstandard2.0\ClientCreation.pdb
+D:\Work\InitialDataMigration\ClientCreationLibrary\ClassLibrary1\obj\Debug\netstandard2.0\ClientCreation.csprojAssemblyReference.cache

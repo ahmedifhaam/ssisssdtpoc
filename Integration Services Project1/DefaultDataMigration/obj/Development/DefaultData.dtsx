@@ -1,0 +1,1535 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/24/2020 8:11:14 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="AHMED-I"
+  DTS:CreatorName="ZONE24X7-CMB\ahmedi"
+  DTS:DTSID="{2C84F615-33F1-4986-8B07-C8A32C895427}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{2DBFF002-8068-42F3-8AE2-1D6F578AC7E4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CC]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{01A6EEF0-4A1D-4D3F-920E-21D69BA39118}"
+      DTS:ObjectName="CC">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=cctest;Integrated Security=True;Column Encryption Setting=Enabled;Application Name=SSIS-Package-{01A6EEF0-4A1D-4D3F-920E-21D69BA39118}LocalHost.cctest;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{B31551DE-97C8-4A2D-B697-885EF6642B21}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Work\InitialDataMigration\Integration Services Project1\DefaultDataMigration\DefaultData.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DefaultLocation"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D18E7591-1702-4E13-9944-BC9FADC2742B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DefaultLocation"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DefaultLocation\ADO NET Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="ADO NET Destination"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Location"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DefaultLocation\ADO NET Destination.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CC]"
+                  connectionManagerRefId="Package.ConnectionManagers[CC]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[LocationId]"
+                      cachedDataType="r8"
+                      cachedName="LocationId"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LocationId]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[LocationId]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[FkParentLocationId]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FkParentLocationId"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FkParentLocationId]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[FkParentLocationId]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[FkLocationTypeId]"
+                      cachedDataType="r8"
+                      cachedName="FkLocationTypeId"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FkLocationTypeId]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[FkLocationTypeId]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[LocationName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LocationName"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LocationName]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[LocationName]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[LocationDisplayName]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LocationDisplayName"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LocationDisplayName]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[LocationDisplayName]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[LocationCode]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="LocationCode"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LocationCode]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[LocationCode]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[City]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[State]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[State]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[State]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[UseAppointments]"
+                      cachedDataType="r8"
+                      cachedName="UseAppointments"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[UseAppointments]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[UseAppointments]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[AvailabilityWindowDays]"
+                      cachedDataType="r8"
+                      cachedName="AvailabilityWindowDays"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[AvailabilityWindowDays]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[AvailabilityWindowDays]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[AppointmentCutoffDays]"
+                      cachedDataType="r8"
+                      cachedName="AppointmentCutoffDays"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[AppointmentCutOffDays]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[AppointmentCutoffDays]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[ReminderBeforeApptSmsHours]"
+                      cachedDataType="r8"
+                      cachedName="ReminderBeforeApptSmsHours"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ReminderBeforeApptSmsHours]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[ReminderBeforeApptSmsHours]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[ReminderBeforeApptEmailHours]"
+                      cachedDataType="r8"
+                      cachedName="ReminderBeforeApptEmailHours"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ReminderBeforeApptEmailHours]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[ReminderBeforeApptEmailHours]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[CreatedBy]"
+                      cachedDataType="r8"
+                      cachedName="CreatedBy"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CreatedBy]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[CreatedBy]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[ActiveStatus]"
+                      cachedDataType="r8"
+                      cachedName="ActiveStatus"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ActiveStatus]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[ActiveStatus]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[EnableStaffSelection]"
+                      cachedDataType="r8"
+                      cachedName="EnableStaffSelection"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[EnableStaffSelection]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[EnableStaffSelection]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[ShowInWidget]"
+                      cachedDataType="r8"
+                      cachedName="ShowInWidget"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ShowInWidget]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[ShowInWidget]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[AutoAssign_FloatPriorityMode]"
+                      cachedDataType="r8"
+                      cachedName="AutoAssign_FloatPriorityMode"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[AutoAssign_FloatPriorityMode]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[AutoAssign_FloatPriorityMode]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[GoogleReserveEnabled]"
+                      cachedDataType="r8"
+                      cachedName="GoogleReserveEnabled"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[GoogleReserveEnabled]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[GoogleReserveEnabled]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[AutoWrapupTime]"
+                      cachedDataType="date"
+                      cachedName="AutoWrapupTime"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[AutoWrapupTime]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[AutoWrapupTime]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Color]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Color"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Color]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[Color]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\DefaultLocation\Created Date - Location.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Addr1]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Addr1"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Address1]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[Addr1]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Addr2]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Addr2"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Address2]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[Addr2]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[DurationBeforeFistApptHours]"
+                      cachedDataType="r8"
+                      cachedName="DurationBeforeFistApptHours"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[DurationBeforeFirstApptHours]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[DurationBeforeFistApptHours]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Copy of TimeBeforeBranchCloseForOnlineCheckin]"
+                      cachedDataType="dbTime"
+                      cachedName="Copy of TimeBeforeBranchCloseForOnlineCheckin"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeBeforeBranchCloseForOnlineCheckIn]"
+                      lineageId="Package\DefaultLocation\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TimeBeforeBranchCloseForOnlineCheckin]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Copy of TimeInAdvanceForOnlineCheckIn]"
+                      cachedDataType="dbTime"
+                      cachedName="Copy of TimeInAdvanceForOnlineCheckIn"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeInAdvanceForOnlineCheckIn]"
+                      lineageId="Package\DefaultLocation\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TimeInAdvanceForOnlineCheckIn]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Copy of DailySummaryEmailTime]"
+                      cachedDataType="dbTime"
+                      cachedName="Copy of DailySummaryEmailTime"
+                      externalMetadataColumnId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[DailySummaryEmailTime]"
+                      lineageId="Package\DefaultLocation\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DailySummaryEmailTime]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LocationId]"
+                      dataType="i4"
+                      name="LocationId" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FkParentLocationId]"
+                      dataType="i4"
+                      name="FkParentLocationId" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FkLocationTypeId]"
+                      dataType="i4"
+                      name="FkLocationTypeId" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FkTimeZoneId]"
+                      dataType="i4"
+                      name="FkTimeZoneId" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LocationName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LocationName" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LocationDisplayName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LocationDisplayName" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[LocationCode]"
+                      dataType="wstr"
+                      length="50"
+                      name="LocationCode" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Address1]"
+                      dataType="wstr"
+                      length="50"
+                      name="Address1" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Address2]"
+                      dataType="wstr"
+                      length="50"
+                      name="Address2" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="50"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ZipCode]"
+                      dataType="wstr"
+                      length="50"
+                      name="ZipCode" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PhoneNumber]"
+                      dataType="wstr"
+                      length="50"
+                      name="PhoneNumber" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FaxNumber]"
+                      dataType="wstr"
+                      length="50"
+                      name="FaxNumber" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Email]"
+                      dataType="wstr"
+                      length="200"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Longitude]"
+                      dataType="numeric"
+                      name="Longitude"
+                      precision="10"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Latitude]"
+                      dataType="numeric"
+                      name="Latitude"
+                      precision="10"
+                      scale="7" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[UseAppointments]"
+                      dataType="bool"
+                      name="UseAppointments" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[AvailabilityWindowDays]"
+                      dataType="i4"
+                      name="AvailabilityWindowDays" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[AppointmentCutOffDays]"
+                      dataType="i4"
+                      name="AppointmentCutOffDays" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[DailySummaryEmailTime]"
+                      dataType="dbTime2"
+                      name="DailySummaryEmailTime" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[DurationBeforeFirstApptHours]"
+                      dataType="numeric"
+                      name="DurationBeforeFirstApptHours"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ReminderBeforeApptSmsHours]"
+                      dataType="numeric"
+                      name="ReminderBeforeApptSmsHours"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ReminderBeforeApptEmailHours]"
+                      dataType="numeric"
+                      name="ReminderBeforeApptEmailHours"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CreatedBy]"
+                      dataType="i4"
+                      name="CreatedBy" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ChangedBy]"
+                      dataType="i4"
+                      name="ChangedBy" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ChangedDate]"
+                      dataType="dbTimeStamp"
+                      name="ChangedDate" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ActiveStatus]"
+                      dataType="ui1"
+                      name="ActiveStatus" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[EnableStaffSelection]"
+                      dataType="bool"
+                      name="EnableStaffSelection" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ShowInWidget]"
+                      dataType="bool"
+                      name="ShowInWidget" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[AutoAssign_FloatPriorityMode]"
+                      dataType="ui1"
+                      name="AutoAssign_FloatPriorityMode" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[PhoneExtention]"
+                      dataType="wstr"
+                      length="4"
+                      name="PhoneExtention" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[GoogleReserveEnabled]"
+                      dataType="bool"
+                      name="GoogleReserveEnabled" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[AutoWrapupTime]"
+                      dataType="dbTimeStamp"
+                      name="AutoWrapupTime" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Color]"
+                      dataType="wstr"
+                      length="6"
+                      name="Color" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[ShowSignedInUsers]"
+                      dataType="bool"
+                      name="ShowSignedInUsers" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[OnlineCheckInEnabled]"
+                      dataType="bool"
+                      name="OnlineCheckInEnabled" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeBeforeBranchCloseForOnlineCheckIn]"
+                      dataType="dbTime2"
+                      name="TimeBeforeBranchCloseForOnlineCheckIn" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[TimeInAdvanceForOnlineCheckIn]"
+                      dataType="dbTime2"
+                      name="TimeInAdvanceForOnlineCheckIn" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[BranchId]"
+                      dataType="i4"
+                      name="BranchId" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[RegionId]"
+                      dataType="i4"
+                      name="RegionId" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[OldLocationId]"
+                      dataType="i4"
+                      name="OldLocationId" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[OldParentLocationId]"
+                      dataType="i4"
+                      name="OldParentLocationId" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FkRegionId]"
+                      dataType="i4"
+                      name="FkRegionId" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DefaultLocation\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DefaultLocation\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DefaultLocation\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DefaultLocation\Created Date - Location"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Created Date - Location"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DefaultLocation\Created Date - Location.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DefaultLocation\Created Date - Location.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DefaultLocation\Created Date - Location.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DefaultLocation\Created Date - Location.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DefaultLocation\Created Date - Location.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DefaultLocation\Created Date - Location.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DefaultLocation\Created Date - Location.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DefaultLocation\Created Date - Location.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DefaultLocation\Created Date - Location.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Created Date - Location.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DefaultLocation\Created Date - Location.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DefaultLocation\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DefaultLocation\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DefaultLocation\Data Conversion.Inputs[Data Conversion Input].Columns[TimeBeforeBranchCloseForOnlineCheckin]"
+                      cachedDataType="date"
+                      cachedName="TimeBeforeBranchCloseForOnlineCheckin"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[TimeBeforeBranchCloseForOnlineCheckin]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\Data Conversion.Inputs[Data Conversion Input].Columns[TimeInAdvanceForOnlineCheckIn]"
+                      cachedDataType="date"
+                      cachedName="TimeInAdvanceForOnlineCheckIn"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[TimeInAdvanceForOnlineCheckIn]" />
+                    <inputColumn
+                      refId="Package\DefaultLocation\Data Conversion.Inputs[Data Conversion Input].Columns[DailySummaryEmailTime]"
+                      cachedDataType="date"
+                      cachedName="DailySummaryEmailTime"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[DailySummaryEmailTime]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DefaultLocation\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DefaultLocation\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DefaultLocation\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TimeBeforeBranchCloseForOnlineCheckin]"
+                      dataType="dbTime"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DefaultLocation\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TimeBeforeBranchCloseForOnlineCheckin]"
+                      name="Copy of TimeBeforeBranchCloseForOnlineCheckin"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[TimeBeforeBranchCloseForOnlineCheckin]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DefaultLocation\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TimeInAdvanceForOnlineCheckIn]"
+                      dataType="dbTime"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DefaultLocation\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of TimeInAdvanceForOnlineCheckIn]"
+                      name="Copy of TimeInAdvanceForOnlineCheckIn"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[TimeInAdvanceForOnlineCheckIn]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\DefaultLocation\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DailySummaryEmailTime]"
+                      dataType="dbTime"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DefaultLocation\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DailySummaryEmailTime]"
+                      name="Copy of DailySummaryEmailTime"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[DailySummaryEmailTime]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DefaultLocation\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DefaultLocation\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DefaultLocation\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DefaultLocation\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DefaultLocation\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DefaultLocation\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Location$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DefaultLocation\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[LocationId]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[LocationId]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[LocationId]"
+                      name="LocationId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[FkParentLocationId]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[FkParentLocationId]"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[FkParentLocationId]"
+                      name="FkParentLocationId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[FkLocationTypeId]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[FkLocationTypeId]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[FkLocationTypeId]"
+                      name="FkLocationTypeId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[FkTimeZoneId ]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[FkTimeZoneId ]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[FkTimeZoneId ]"
+                      name="FkTimeZoneId "
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[LocationName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[LocationName]"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[LocationName]"
+                      name="LocationName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[LocationDisplayName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[LocationDisplayName]"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[LocationDisplayName]"
+                      name="LocationDisplayName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[LocationCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[LocationCode]"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[LocationCode]"
+                      name="LocationCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[Addr1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[Addr1]"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[Addr1]"
+                      name="Addr1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[Addr2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[Addr2]"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[Addr2]"
+                      name="Addr2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[City]"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[State]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[State]"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[Country]"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[UseAppointments]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[UseAppointments]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[UseAppointments]"
+                      name="UseAppointments"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[AvailabilityWindowDays]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[AvailabilityWindowDays]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[AvailabilityWindowDays]"
+                      name="AvailabilityWindowDays"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[AppointmentCutoffDays]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[AppointmentCutoffDays]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[AppointmentCutoffDays]"
+                      name="AppointmentCutoffDays"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[DailySummaryEmailTime]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[DailySummaryEmailTime]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[DailySummaryEmailTime]"
+                      name="DailySummaryEmailTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[DurationBeforeFistApptHours]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[DurationBeforeFistApptHours]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[DurationBeforeFistApptHours]"
+                      name="DurationBeforeFistApptHours"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[ReminderBeforeApptSmsHours]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[ReminderBeforeApptSmsHours]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[ReminderBeforeApptSmsHours]"
+                      name="ReminderBeforeApptSmsHours"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[ReminderBeforeApptEmailHours]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[ReminderBeforeApptEmailHours]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[ReminderBeforeApptEmailHours]"
+                      name="ReminderBeforeApptEmailHours"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[CreatedBy]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[CreatedBy]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[CreatedBy]"
+                      name="CreatedBy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[ActiveStatus]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[ActiveStatus]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[ActiveStatus]"
+                      name="ActiveStatus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[EnableStaffSelection]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[EnableStaffSelection]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[EnableStaffSelection]"
+                      name="EnableStaffSelection"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[ShowInWidget]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[ShowInWidget]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[ShowInWidget]"
+                      name="ShowInWidget"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[AutoAssign_FloatPriorityMode]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[AutoAssign_FloatPriorityMode]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[AutoAssign_FloatPriorityMode]"
+                      name="AutoAssign_FloatPriorityMode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[GoogleReserveEnabled]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[GoogleReserveEnabled]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[GoogleReserveEnabled]"
+                      name="GoogleReserveEnabled"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[AutoWrapupTime]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[AutoWrapupTime]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[AutoWrapupTime]"
+                      name="AutoWrapupTime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[Color]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[Color]"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[Color]"
+                      name="Color"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[TimeBeforeBranchCloseForOnlineCheckin]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[TimeBeforeBranchCloseForOnlineCheckin]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[TimeBeforeBranchCloseForOnlineCheckin]"
+                      name="TimeBeforeBranchCloseForOnlineCheckin"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[TimeInAdvanceForOnlineCheckIn]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[TimeInAdvanceForOnlineCheckIn]"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].Columns[TimeInAdvanceForOnlineCheckIn]"
+                      name="TimeInAdvanceForOnlineCheckIn"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[LocationId]"
+                      dataType="r8"
+                      name="LocationId" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[FkParentLocationId]"
+                      dataType="wstr"
+                      length="255"
+                      name="FkParentLocationId" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[FkLocationTypeId]"
+                      dataType="r8"
+                      name="FkLocationTypeId" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[FkTimeZoneId ]"
+                      dataType="r8"
+                      name="FkTimeZoneId " />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[LocationName]"
+                      dataType="wstr"
+                      length="255"
+                      name="LocationName" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[LocationDisplayName]"
+                      dataType="wstr"
+                      length="255"
+                      name="LocationDisplayName" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[LocationCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="LocationCode" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[Addr1]"
+                      dataType="wstr"
+                      length="255"
+                      name="Addr1" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[Addr2]"
+                      dataType="wstr"
+                      length="255"
+                      name="Addr2" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="255"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="255"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="255"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[UseAppointments]"
+                      dataType="r8"
+                      name="UseAppointments" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[AvailabilityWindowDays]"
+                      dataType="r8"
+                      name="AvailabilityWindowDays" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[AppointmentCutoffDays]"
+                      dataType="r8"
+                      name="AppointmentCutoffDays" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[DailySummaryEmailTime]"
+                      dataType="date"
+                      name="DailySummaryEmailTime" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[DurationBeforeFistApptHours]"
+                      dataType="r8"
+                      name="DurationBeforeFistApptHours" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[ReminderBeforeApptSmsHours]"
+                      dataType="r8"
+                      name="ReminderBeforeApptSmsHours" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[ReminderBeforeApptEmailHours]"
+                      dataType="r8"
+                      name="ReminderBeforeApptEmailHours" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[CreatedBy]"
+                      dataType="r8"
+                      name="CreatedBy" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[ActiveStatus]"
+                      dataType="r8"
+                      name="ActiveStatus" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[EnableStaffSelection]"
+                      dataType="r8"
+                      name="EnableStaffSelection" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[ShowInWidget]"
+                      dataType="r8"
+                      name="ShowInWidget" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[AutoAssign_FloatPriorityMode]"
+                      dataType="r8"
+                      name="AutoAssign_FloatPriorityMode" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[GoogleReserveEnabled]"
+                      dataType="r8"
+                      name="GoogleReserveEnabled" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[AutoWrapupTime]"
+                      dataType="date"
+                      name="AutoWrapupTime" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[Color]"
+                      dataType="wstr"
+                      length="255"
+                      name="Color" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[TimeBeforeBranchCloseForOnlineCheckin]"
+                      dataType="date"
+                      name="TimeBeforeBranchCloseForOnlineCheckin" />
+                    <externalMetadataColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output].ExternalColumns[TimeInAdvanceForOnlineCheckIn]"
+                      dataType="date"
+                      name="TimeInAdvanceForOnlineCheckIn" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[LocationId]"
+                      dataType="r8"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[LocationId]"
+                      name="LocationId" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[FkParentLocationId]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[FkParentLocationId]"
+                      name="FkParentLocationId" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[FkLocationTypeId]"
+                      dataType="r8"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[FkLocationTypeId]"
+                      name="FkLocationTypeId" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[FkTimeZoneId ]"
+                      dataType="r8"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[FkTimeZoneId ]"
+                      name="FkTimeZoneId " />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[LocationName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[LocationName]"
+                      name="LocationName" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[LocationDisplayName]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[LocationDisplayName]"
+                      name="LocationDisplayName" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[LocationCode]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[LocationCode]"
+                      name="LocationCode" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[Addr1]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[Addr1]"
+                      name="Addr1" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[Addr2]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[Addr2]"
+                      name="Addr2" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[City]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[State]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[State]"
+                      name="State" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[Country]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[UseAppointments]"
+                      dataType="r8"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[UseAppointments]"
+                      name="UseAppointments" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[AvailabilityWindowDays]"
+                      dataType="r8"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[AvailabilityWindowDays]"
+                      name="AvailabilityWindowDays" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[AppointmentCutoffDays]"
+                      dataType="r8"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[AppointmentCutoffDays]"
+                      name="AppointmentCutoffDays" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[DailySummaryEmailTime]"
+                      dataType="date"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[DailySummaryEmailTime]"
+                      name="DailySummaryEmailTime" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[DurationBeforeFistApptHours]"
+                      dataType="r8"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[DurationBeforeFistApptHours]"
+                      name="DurationBeforeFistApptHours" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[ReminderBeforeApptSmsHours]"
+                      dataType="r8"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[ReminderBeforeApptSmsHours]"
+                      name="ReminderBeforeApptSmsHours" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[ReminderBeforeApptEmailHours]"
+                      dataType="r8"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[ReminderBeforeApptEmailHours]"
+                      name="ReminderBeforeApptEmailHours" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[CreatedBy]"
+                      dataType="r8"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[CreatedBy]"
+                      name="CreatedBy" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[ActiveStatus]"
+                      dataType="r8"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[ActiveStatus]"
+                      name="ActiveStatus" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[EnableStaffSelection]"
+                      dataType="r8"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[EnableStaffSelection]"
+                      name="EnableStaffSelection" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[ShowInWidget]"
+                      dataType="r8"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[ShowInWidget]"
+                      name="ShowInWidget" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[AutoAssign_FloatPriorityMode]"
+                      dataType="r8"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[AutoAssign_FloatPriorityMode]"
+                      name="AutoAssign_FloatPriorityMode" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[GoogleReserveEnabled]"
+                      dataType="r8"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[GoogleReserveEnabled]"
+                      name="GoogleReserveEnabled" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[AutoWrapupTime]"
+                      dataType="date"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[AutoWrapupTime]"
+                      name="AutoWrapupTime" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[Color]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[Color]"
+                      name="Color" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[TimeBeforeBranchCloseForOnlineCheckin]"
+                      dataType="date"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[TimeBeforeBranchCloseForOnlineCheckin]"
+                      name="TimeBeforeBranchCloseForOnlineCheckin" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[TimeInAdvanceForOnlineCheckIn]"
+                      dataType="date"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[TimeInAdvanceForOnlineCheckIn]"
+                      name="TimeInAdvanceForOnlineCheckIn" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DefaultLocation.Paths[Data Conversion Output]"
+              endId="Package\DefaultLocation\ADO NET Destination.Inputs[ADO NET Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\DefaultLocation\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\DefaultLocation.Paths[Derived Column Output]"
+              endId="Package\DefaultLocation\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\DefaultLocation\Created Date - Location.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DefaultLocation.Paths[Excel Source Output]"
+              endId="Package\DefaultLocation\Created Date - Location.Inputs[Derived Column Input]"
+              name="Excel Source Output"
+              startId="Package\DefaultLocation\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\DefaultLocation"
+          TopLeft="82,38" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DefaultLocation">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="144,42"
+          Id="Package\DefaultLocation\Excel Source"
+          TopLeft="121,35" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\DefaultLocation\ADO NET Destination"
+          TopLeft="108,257" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\DefaultLocation\Created Date - Location"
+          TopLeft="98,120" />
+        <EdgeLayout
+          Id="Package\DefaultLocation.Paths[Excel Source Output]"
+          TopLeft="194.25,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161,42"
+          Id="Package\DefaultLocation\Data Conversion"
+          TopLeft="124,193" />
+        <EdgeLayout
+          Id="Package\DefaultLocation.Paths[Derived Column Output]"
+          TopLeft="195.5,162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9,31"
+              Start="0,0"
+              End="9,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="4,15.5" />
+                  <mssgle:LineSegment
+                    End="5,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5,15.5"
+                    Point2="9,15.5"
+                    Point3="9,19.5" />
+                  <mssgle:LineSegment
+                    End="9,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DefaultLocation.Paths[Data Conversion Output]"
+          TopLeft="285,214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9,64"
+              Start="0,0"
+              End="16.5,64">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="27.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.5,0"
+                    Point2="31.5,0"
+                    Point3="31.5,4" />
+                  <mssgle:LineSegment
+                    End="31.5,60" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.5,60"
+                    Point2="31.5,64"
+                    Point3="27.5,64" />
+                  <mssgle:LineSegment
+                    End="16.5,64" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DefaultLocation\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DefaultLocation\ADO NET Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
